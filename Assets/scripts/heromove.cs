@@ -135,15 +135,15 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         }
     }
 
-    //public void TakeDamage(int damage)
-    //{
-    //    currentHealth -= damage;
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
 
-    //    if (currentHealth <= 0)
-    //    {
-    //        Debug.Log("Персонаж метв!");
-    //    }
-    //}
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Персонаж метв!");
+        }
+    }
 
     //------- Функция/метод для атаки ---------
     public Transform attackPoint;
