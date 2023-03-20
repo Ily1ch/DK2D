@@ -35,6 +35,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
             Atack();
         }
     }
+   
     //------- Функция/метод для перемещения персонажа по горизонтали ---------
     public Vector2 moveVector;
     public int speed = 3;
@@ -42,7 +43,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     {
         moveVector.x = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
-        anim.SetFloat("MoveX", Mathf.Abs(moveVector.x));
+        anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
 
     }
     //------- Функция/метод для отражения персонажа по горизонтали ---------
@@ -56,9 +57,10 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         }
     }
     //------- Функция/метод для прыжка ---------
-    public float jumpForce = 10f;
+    
     private int jumpCount = 0;
     public int maxJumpValue = 2;
+    public int jumpForce = 10;
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && (onGround || (++jumpCount < maxJumpValue)))
@@ -66,7 +68,6 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
         if (onGround) { jumpCount = 0; }
-
     }
 
     //------- Функция/метод для обнаружения земли ---------
@@ -90,8 +91,8 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
         {
-            //anim.StopPlayback();
-            //anim.Play("dash");
+            anim.StopPlayback();
+            anim.Play("dash");
 
             rb.velocity = Vector2.zero;
 
@@ -116,8 +117,8 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && Time.time > lastSomersaultTime + SomersaultCooldown)
         {
-            //anim.StopPlayback();
-            //anim.Play("Somersault");
+            anim.StopPlayback();
+            anim.Play("Somersault");
 
             rb.velocity = Vector2.zero;
 
@@ -134,15 +135,15 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         }
     }
 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
+    //public void TakeDamage(int damage)
+    //{
+    //    currentHealth -= damage;
 
-        if (currentHealth <= 0)
-        {
-            Debug.Log("Персонаж метв!");
-        }
-    }
+    //    if (currentHealth <= 0)
+    //    {
+    //        Debug.Log("Персонаж метв!");
+    //    }
+    //}
 
     //------- Функция/метод для атаки ---------
     public Transform attackPoint;
@@ -150,10 +151,10 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
 
     public float attackRange = 0.5f;
     public int attackDamage = 10;
-    
+
     void Atack()
     {
-        anim.SetTrigger("Atack");
+        anim.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
