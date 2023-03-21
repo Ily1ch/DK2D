@@ -80,7 +80,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
         anim.SetBool("onGround", onGround);
     }
-    //-----------------------------------------------------------------
+    //--------------------------------------------------------соби---------
 
     //------- Функция/метод для рывка ---------
     public int dashForce = 1000;
