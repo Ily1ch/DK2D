@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSword : MonoBehaviour
+public class ItemArmor : MonoBehaviour
 {
-    public int damageBonus = 10;
+    // Start is called before the first frame update
+    public int HpBonus = 100;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            heromove attackDamage = collision.gameObject.GetComponent<heromove>();
-            if (attackDamage != null)
+            heromove HpHero = collision.gameObject.GetComponent<heromove>();
+            if (HpHero != null)
             {
-                attackDamage.attackDamage += damageBonus;
+                HpHero.maxHealth += HpBonus;
                 Destroy(gameObject);
             }
         }

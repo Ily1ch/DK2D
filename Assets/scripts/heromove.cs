@@ -58,7 +58,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     }
     //------- Функция/метод для прыжка ---------
     
-    private int jumpCount = 0;
+    public int jumpCount = 0;
     public int maxJumpValue = 2;
     public int jumpForce = 10;
     void Jump()
