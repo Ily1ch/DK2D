@@ -148,7 +148,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     //------- Функция/метод для атаки ---------
     public Transform attackPoint;
     public LayerMask enemyLayers;
-
+    public LayerMask breakableWall;
     public float attackRange = 0.5f;
     public int attackDamage = 10;
 
@@ -157,10 +157,15 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         anim.SetTrigger("Attack");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] breakablewall = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, breakableWall);
 
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
+        foreach (Collider2D wall in breakablewall)
+        {
+            wall.GetComponent<BreakableWall>().TakeDamageWall(attackDamage);
         }
     }
     void OnDrawGizmosSelected()
