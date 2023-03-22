@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.Threading.Tasks;
+using System.Threading;
 
 public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя файла скрипта
 {
@@ -34,9 +36,33 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         {
             Atack();
         }
-        Debug.Log(speed);
+        if (currentHealth < maxHealth)
+        {
+            RegenerateHealth();
+        }
     }
-   
+    //-------хп реген------
+    public float TimeDelay = 2;
+    public float TimeDelayHP;
+    private void FixedUpdate()
+    {
+        
+    }
+    void RegenerateHealth()
+    {
+        TimeDelayHP += Time.deltaTime;
+        if (TimeDelayHP >= TimeDelay)
+        {
+            currentHealth++;
+            TimeDelayHP = 0;
+            if (currentHealth >= maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+        }
+    }
+    //---------------------------------------
+
     //------- Функция/метод для перемещения персонажа по горизонтали ---------
     public Vector2 moveVector;
     public int speed = 3;
@@ -143,6 +169,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         if (currentHealth <= 0)
         {
             Debug.Log("Персонаж метв!");
+            
         }
     }
 
