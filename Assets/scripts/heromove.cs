@@ -34,6 +34,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         {
             Atack();
         }
+        Debug.Log(speed);
     }
    
     //------- Функция/метод для перемещения персонажа по горизонтали ---------
