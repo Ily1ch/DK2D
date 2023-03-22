@@ -82,6 +82,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
             transform.localScale *= new Vector2(-1, 1);
             faceRight = !faceRight;
         }
+        
     }
     //------- Функция/метод для прыжка ---------
     
@@ -93,6 +94,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         if (Input.GetKeyDown(KeyCode.Space) && (onGround || (++jumpCount < maxJumpValue)))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            //currentHealth--;
         }
         if (onGround) { jumpCount = 0; }
     }
