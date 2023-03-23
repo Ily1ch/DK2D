@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEditor;
 using System.Threading.Tasks;
 using System.Threading;
@@ -10,14 +11,16 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     //------- Функция/метод, выполняемая при запуске игры ---------
 
     public int maxHealth = 100;
-    public int currentHealth;
+    public int currentHealth=1;
+
+    public HealthBar healthBar;
 
     public Rigidbody2D rb;
     public Animator anim;
     void Start()
     {
         currentHealth = maxHealth;
-
+        healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //-v- Для автоматического присваивания в переменную, радиуса коллайдера объекта «GroundCheck»
@@ -35,11 +38,13 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Atack();
+            TakeDamage(20);
         }
         if (currentHealth < maxHealth)
         {
             RegenerateHealth();
         }
+        
     }
     //-------хп реген------
     public float TimeDelay = 2;
@@ -94,7 +99,6 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         if (Input.GetKeyDown(KeyCode.Space) && (onGround || (++jumpCount < maxJumpValue)))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            //currentHealth--;
         }
         if (onGround) { jumpCount = 0; }
     }
@@ -168,12 +172,20 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     {
         currentHealth -= damage;
 
+        healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
-        {
-            Debug.Log("Персонаж метв!");
-            
-        }
+            Die();
+
+        
     }
+
+    void Die()
+    {
+        //animator.Play("Die");
+        //animator.SetBool("Die", true);
+        Destroy(this.gameObject, 0.5f);
+    }
+
 
     //------- Функция/метод для атаки ---------
     public Transform attackPoint;
