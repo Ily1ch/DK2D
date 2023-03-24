@@ -10,14 +10,19 @@ public class HealthBar : MonoBehaviour
 	public Gradient gradient;
 	public Image fill;
 
-	public void SetMaxHealth(int health)
+    public void Update()
+    {
+		
+    }
+
+    public void SetMaxHealth(int health)
 	{
 		slider.maxValue = health;
 		slider.value = health;
 	}
 
-	public void SetHealth(int health)
-	{
-		slider.value = health;
-	}
+    public void SetHealth(int health)
+    {
+        slider.value = health;
+    }
 }

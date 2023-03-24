@@ -44,15 +44,11 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         {
             RegenerateHealth();
         }
-        
+        healthBar.SetHealth(currentHealth);
     }
     //-------хп реген------
     public float TimeDelay = 2;
     public float TimeDelayHP;
-    private void FixedUpdate()
-    {
-        
-    }
     void RegenerateHealth()
     {
         TimeDelayHP += Time.deltaTime;
@@ -172,7 +168,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     {
         currentHealth -= damage;
 
-        healthBar.SetHealth(currentHealth);
+        //healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
             Die();
 
