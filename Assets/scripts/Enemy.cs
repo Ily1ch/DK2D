@@ -1,122 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
-    public Animator animator;
+    public Transform target; // цель, за которой будет преследовать враг
+    public float speed = 5f; // скорость передвижения врага
+    public float minDistance = 2f; // минимальное расстояние, при котором враг начинает преследовать игрока
 
-    public float detectionRange = 10f; // расстояние, на котором враг замечает игрока
-    public float attackRange = 0.5f; // расстояние, на котором враг может атаковать игрока
-    public float movementSpeed = 5f; // скорость передвижения врага
-    public int attackDamageEnemy = 5; // урон от атаки врага
+    private bool isFollowing = false; // флаг, указывающий, следует ли враг за игроком
 
-    private Transform hero; // позиция игрока
-    private NavMeshAgent agent; // компонент для передвижения по навмешу
-
-
-    void Start()
+    private void Update()
     {
-        currentHealth = maxHealth;
-        animator = GetComponent<Animator>();
-
-        hero = GameObject.FindGameObjectWithTag("Player").transform; // получаем позицию игрока по тегу "Player"
-    }
-    void Update()
-    {
-        float distance = Vector3.Distance(transform.position, hero.position); // вычисляем расстояние до игрока
-
-        if (distance <= detectionRange) // если игрок находится в зоне видимости врага
+        if (target == null)
         {
-            Vector3 direction = (hero.position - transform.position).normalized; // вычисляем направление к игроку
-            transform.Translate(direction * movementSpeed * Time.deltaTime); // передвигаем врага в направлении игрока
-
-            if (distance <= attackRange) // если игрок находится в зоне атаки врага
-            {
-                Attack(); // атакуем игрока
-            }
+            return; // если цель отсутствует, то враг ничего не делает
         }
-    }
 
+        float distance = Vector3.Distance(transform.position, target.position); // вычисляем расстояние до цели
 
-    public Transform attackPointEnemy;
-    public LayerMask Player;
-    void Attack()
-    {
-        // в данном случае мы просто выведем сообщение в консоль, но здесь может быть любая другая логика атаки игрока
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointEnemy.position, attackRange, Player);
-
-        foreach (Collider2D hero in hitEnemies)
+        if (distance <= minDistance)
         {
-            hero.GetComponent<heromove>().TakeDamage(attackDamageEnemy);
+            isFollowing = true; // если игрок находится в зоне преследования, то враг начинает следовать за ним
         }
-        Debug.Log("Enemy attacked player for " + attackDamageEnemy + " damage.");
-    }
 
-    void OnDrawGizmosSelected()
-    {
-        if (attackPointEnemy == null)
-            return;
-        Gizmos.DrawWireSphere(attackPointEnemy.position, attackRange);
-    }
+        if (isFollowing)
+        {
+            Vector3 direction = target.position - transform.position; // вычисляем направление к цели
+            direction.Normalize(); // нормализуем направление, чтобы скорость передвижения не зависела от расстояния до цели
+            transform.position += direction * speed * Time.deltaTime; // перемещаем врага в направлении цели
+        }
 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        //animator.Play("isDamaged");
-        //animator.SetTrigger("isDamaged");
-        if (currentHealth <= 0)
-            Die();
-    }
-
-    void Die()
-    {
-        //animator.Play("Die");
-        //animator.SetBool("Die", true);
-        Destroy(this.gameObject,0.5f);
+        if (distance > minDistance * 2f)
+        {
+            isFollowing = false; // если игрок выходит за пределы зоны преследования, то враг останавливается
+        }
     }
 }
-//public Transform Player;
-//private Rigidbody2D rb;
-//private Vector2 movement;
-//private int speed = 5;
-//public float chaseDistance = 5f;
-
-//void Start()
-//{
-//    currentHealth = maxHealth;
-//    rb = this.GetComponent<Rigidbody2D>();
-//}
-
-//void Update()
-//{
-//    float distance = Vector2.Distance(transform.position, Player.position);
-
-//    if (distance < chaseDistance)
-//    {
-//        Vector3 direction = Player.position - transform.position;
-//        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-//        direction.Normalize();
-//        movement = direction;
-//    }
-//    else
-//    {
-//        movement = Vector2.zero;
-//    }
-//}
-
-//private void FixedUpdate()
-//{
-//    MoveChar(movement);
-//}
-
-//private void MoveChar(Vector2 direction)
-//{
-//    rb.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
-//}
-
-
