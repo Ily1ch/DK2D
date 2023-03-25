@@ -2,36 +2,54 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform target; // цель, за которой будет преследовать враг
-    public float speed = 5f; // скорость передвижения врага
-    public float minDistance = 2f; // минимальное расстояние, при котором враг начинает преследовать игрока
+    public Transform playerTransform;
+    public float speed = 5.0f;
+    public float chaseRange = 5.0f;
+    public float stopRange = 1.0f;
 
-    private bool isFollowing = false; // флаг, указывающий, следует ли враг за игроком
+    private bool isChasing = false;
 
-    private void Update()
+    void Start()
     {
-        if (target == null)
+        // Находим игрока по тэгу "Player"
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
         {
-            return; // если цель отсутствует, то враг ничего не делает
+            playerTransform = player.transform;
+        }
+    }
+
+    void Update()
+    {
+        if (playerTransform == null)
+        {
+            return; // игрок не найден, выходим из метода
         }
 
-        float distance = Vector3.Distance(transform.position, target.position); // вычисляем расстояние до цели
+        // Вычисляем расстояние между врагом и игроком
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
-        if (distance <= minDistance)
+        if (distanceToPlayer < chaseRange)
         {
-            isFollowing = true; // если игрок находится в зоне преследования, то враг начинает следовать за ним
+            isChasing = true;
         }
 
-        if (isFollowing)
+        if (isChasing)
         {
-            Vector3 direction = target.position - transform.position; // вычисляем направление к цели
-            direction.Normalize(); // нормализуем направление, чтобы скорость передвижения не зависела от расстояния до цели
-            transform.position += direction * speed * Time.deltaTime; // перемещаем врага в направлении цели
-        }
+            // Поворачиваем врага в сторону игрока
+            Vector2 direction = (playerTransform.position - transform.position).normalized;
+            transform.right = direction;
+            transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
 
-        if (distance > minDistance * 2f)
-        {
-            isFollowing = false; // если игрок выходит за пределы зоны преследования, то враг останавливается
+
+            if (distanceToPlayer > stopRange)
+            {
+                // Двигаем врага в направлении игрока
+                direction = (playerTransform.position - transform.position).normalized;
+                transform.right = direction;
+                transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
+
+            }
         }
     }
 }
