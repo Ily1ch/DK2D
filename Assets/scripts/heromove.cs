@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEditor;
 using System.Threading.Tasks;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя файла скрипта
 {
@@ -180,6 +181,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         //animator.Play("Die");
         //animator.SetBool("Die", true);
         Destroy(this.gameObject, 0.5f);
+        SceneManager.LoadScene(1);
     }
 
 
