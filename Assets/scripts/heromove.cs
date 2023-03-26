@@ -15,11 +15,13 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     public int currentHealth=1;
 
     public HealthBar healthBar;
+    public VectorValue pos;
 
     public Rigidbody2D rb;
     public Animator anim;
     void Start()
     {
+        transform.position = pos.initialValue;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
@@ -71,7 +73,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     void Walk()
     {
         moveVector.x = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveVector.x * speed, rb.velocity.y);
+        rb.velocity = new Vector3(moveVector.x * speed, rb.velocity.y);
         anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
 
     }
