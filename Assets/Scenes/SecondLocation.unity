@@ -335,6 +335,8 @@ MonoBehaviour:
   currentHealth: 1
   healthBar: {fileID: 1226371077}
   pos: {fileID: 11400000, guid: 00130a86548ba974ba71c94fd8f52288, type: 2}
+  playerController: {fileID: 9100000, guid: 82f771e46844c9b4d83d6cc62df7cfd4, type: 2}
+  style2PlayerController: {fileID: 9100000, guid: d065f173ebefd2647bd5a8d03992d35f, type: 2}
   rb: {fileID: 491619480}
   anim: {fileID: 491619479}
   TimeDelay: 2
