@@ -17,6 +17,11 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     public HealthBar healthBar;
     public VectorValue pos;
 
+    public RuntimeAnimatorController playerController;
+    public RuntimeAnimatorController style2PlayerController;
+
+    private RuntimeAnimatorController activeController;
+
     public Rigidbody2D rb;
     public Animator anim;
     void Start()
@@ -26,6 +31,8 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        activeController = playerController;
+        anim.runtimeAnimatorController = activeController;
         //-v- Для автоматического присваивания в переменную, радиуса коллайдера объекта «GroundCheck»
         GroundCheckRadius = GroundCheck.GetComponent<CircleCollider2D>().radius;
     }
@@ -48,6 +55,27 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
             RegenerateHealth();
         }
         healthBar.SetHealth(currentHealth);
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            SwitchController();
+        }
+    }
+
+    private void SwitchController()
+    {
+        if (activeController == playerController)
+        {
+            // Если текущий активный контроллер - Player, то переключаем на 2stylePlayer
+            anim.runtimeAnimatorController = style2PlayerController;
+            activeController = style2PlayerController;
+        }
+        else
+        {
+            // Иначе переключаем на Player
+            anim.runtimeAnimatorController = playerController;
+            activeController = playerController;
+        }
     }
     //-------хп реген------
     public float TimeDelay = 2;
