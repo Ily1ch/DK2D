@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1366
     height: 695
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Animator
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 161
+  controlID: 159
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 62
+  controlID: 60
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 116
+  controlID: 114
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -297,8 +297,8 @@ MonoBehaviour:
     y: 0
     width: 375
     height: 645
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -396,14 +396,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.24285714
+    - e00: 0.56174326
       e01: 0
       e02: 0
-      e03: 112.14285
+      e03: 116.71795
       e10: 0
-      e11: 0.24285714
+      e11: 0.56174326
       e12: 0
-      e13: 33.92858
+      e13: -64.701256
       e20: 0
       e21: 0
       e22: 1
@@ -412,14 +412,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.27868852
+    - e00: 0.46265027
       e01: 0
       e02: 0
-      e03: 76.31148
+      e03: 131.3351
       e10: 0
-      e11: 0.27868852
+      e11: 0.46265027
       e12: 0
-      e13: 28.573769
+      e13: -14.406413
       e20: 0
       e21: 0
       e22: 1
@@ -477,9 +477,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: d065f173ebefd2647bd5a8d03992d35f, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 82f771e46844c9b4d83d6cc62df7cfd4, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1402109476533858284, guid: d065f173ebefd2647bd5a8d03992d35f, type: 2}
+  - m_Target: {fileID: 4969935150405182027, guid: 82f771e46844c9b4d83d6cc62df7cfd4, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1108,8 +1108,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d8630000
-      m_LastClickedID: 25560
+      m_SelectedIDs: 86650000
+      m_LastClickedID: 0
       m_ExpandedIDs: fefaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1180,22 +1180,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/heromaterials/static
+    - Assets/heromaterials
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/heromaterials/static
+  - Assets/heromaterials
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Ilyich\Desktop\cursach\DK2D
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 48}
-    m_SelectedIDs: a6660000
-    m_LastClickedID: 26278
+    m_SelectedIDs: 90660000
+    m_LastClickedID: 26256
     m_ExpandedIDs: 000000008c6600008e6600009066000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: fe6300001e9f00009ab1ffff4275000000000000d07a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1276,7 +1276,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 504}
+    m_ScrollPosition: {x: 0, y: 298.5}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 152
