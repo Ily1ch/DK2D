@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        // Находим игрока по тэгу "Player"
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ "Player"
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -23,10 +23,10 @@ public class Enemy : MonoBehaviour
     {
         if (playerTransform == null)
         {
-            return; // игрок не найден, выходим из метода
+            return; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         }
 
-        // Вычисляем расстояние между врагом и игроком
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
         if (distanceToPlayer < chaseRange)
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
         if (isChasing)
         {
-            // Поворачиваем врага в сторону игрока
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             Vector2 direction = (playerTransform.position - transform.position).normalized;
             transform.right = direction;
             transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
@@ -44,7 +44,8 @@ public class Enemy : MonoBehaviour
 
             if (distanceToPlayer > stopRange)
             {
-                // Двигаем врага в направлении игрока
+                
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                 direction = (playerTransform.position - transform.position).normalized;
                 transform.right = direction;
                 transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
