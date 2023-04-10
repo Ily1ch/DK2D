@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.Threading;
 using UnityEngine.SceneManagement;
 
-public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя файла скрипта
+public class heromove : MonoBehaviour // - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅPlayerMoveпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
-    //------- Функция/метод, выполняемая при запуске игры ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ ---------
 
     public int maxHealth = 100;
     public int currentHealth=1;
@@ -33,10 +33,10 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         anim = GetComponent<Animator>();
         activeController = playerController;
         anim.runtimeAnimatorController = activeController;
-        //-v- Для автоматического присваивания в переменную, радиуса коллайдера объекта «GroundCheck»
+        //-v- пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅGroundCheckпїЅ
         GroundCheckRadius = GroundCheck.GetComponent<CircleCollider2D>().radius;
     }
-    //------- Функция/метод, выполняемая каждый кадр в игре ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ ---------
     void Update()
     {
         Walk();
@@ -66,18 +66,18 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     {
         if (activeController == playerController)
         {
-            // Если текущий активный контроллер - Player, то переключаем на 2stylePlayer
+            // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - Player, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 2stylePlayer
             anim.runtimeAnimatorController = style2PlayerController;
             activeController = style2PlayerController;
         }
         else
         {
-            // Иначе переключаем на Player
+            // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Player
             anim.runtimeAnimatorController = playerController;
             activeController = playerController;
         }
     }
-    //-------хп реген------
+    //-------пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ------
     public float TimeDelay = 2;
     public float TimeDelayHP;
     void RegenerateHealth()
@@ -95,7 +95,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     }
     //---------------------------------------
 
-    //------- Функция/метод для перемещения персонажа по горизонтали ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ---------
     public Vector2 moveVector;
     public int speed = 3;
     void Walk()
@@ -105,7 +105,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
 
     }
-    //------- Функция/метод для отражения персонажа по горизонтали ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ---------
     public bool faceRight = true;
     void Reflect()
     {
@@ -116,7 +116,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         }
         
     }
-    //------- Функция/метод для прыжка ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ---------
     
     public int jumpCount = 0;
     public int maxJumpValue = 2;
@@ -130,7 +130,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         if (onGround) { jumpCount = 0; }
     }
 
-    //------- Функция/метод для обнаружения земли ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ---------
     public bool onGround;
     public LayerMask Ground;
     public Transform GroundCheck;
@@ -140,12 +140,12 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
         anim.SetBool("onGround", onGround);
     }
-    //--------------------------------------------------------соби---------
+    //--------------------------------------------------------пїЅпїЅпїЅпїЅ---------
 
-    //------- Функция/метод для рывка ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ---------
     public int dashForce = 1000;
-    public float dashCooldown = 1f; // время перезарядки в секундах
-    private float lastDashTime = -Mathf.Infinity; // время последнего использования способности
+    public float dashCooldown = 1f; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private float lastDashTime = -Mathf.Infinity; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     void Dash()
     {
@@ -165,13 +165,13 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
                 rb.AddForce(Vector2.right * dashForce);
             }
 
-            lastDashTime = Time.time; // устанавливаем время последнего использования способности
+            lastDashTime = Time.time; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
-    //------- Функция/метод для кувырка ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ ---------
     public int SomersaultForce = 1000;
-    public float SomersaultCooldown = 1f; // время перезарядки в секундах
-    private float lastSomersaultTime = -Mathf.Infinity; // время последнего использования способности
+    public float SomersaultCooldown = 1f; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    private float lastSomersaultTime = -Mathf.Infinity; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     void Somersault()
     {
@@ -191,7 +191,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
                 rb.AddForce(Vector2.right * SomersaultForce);
             }
 
-            lastSomersaultTime = Time.time; // устанавливаем время последнего использования способности
+            lastSomersaultTime = Time.time; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
 
@@ -215,7 +215,7 @@ public class heromove : MonoBehaviour // - Вместо «PlayerMove» должно быть имя ф
     }
 
 
-    //------- Функция/метод для атаки ---------
+    //------- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ/пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ ---------
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public LayerMask breakableWall;
