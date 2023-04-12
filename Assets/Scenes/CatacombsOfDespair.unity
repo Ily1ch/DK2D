@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 1
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 9120002}
   pos: {fileID: 11400000, guid: 00130a86548ba974ba71c94fd8f52288, type: 2}
   playerController: {fileID: 9100000, guid: 82f771e46844c9b4d83d6cc62df7cfd4, type: 2}
   style2PlayerController: {fileID: 9100000, guid: d065f173ebefd2647bd5a8d03992d35f, type: 2}
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   TimeDelay: 2
   TimeDelayHP: 0
   moveVector: {x: 0, y: 0}
-  speed: 3
+  speed: 10
   faceRight: 1
   jumpCount: 0
   maxJumpValue: 2

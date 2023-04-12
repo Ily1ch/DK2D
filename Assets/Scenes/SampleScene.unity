@@ -8359,7 +8359,7 @@ GameObject:
   - component: {fileID: 1471067408}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9657,15 +9657,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751432256}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0571906fe5b976640b710e874d29ea5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1471067403}
-  speed: 20
-  chaseRange: 5
-  stopRange: 1
+  detectionRadius: 5
+  attackRange: 1
+  moveSpeed: 2
+  attackPower: 10
 --- !u!1 &1757995031
 GameObject:
   m_ObjectHideFlags: 0

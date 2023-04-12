@@ -28,7 +28,7 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
     {
         transform.position = pos.initialValue;
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         activeController = playerController;
@@ -54,7 +54,7 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
         {
             RegenerateHealth();
         }
-        //healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {

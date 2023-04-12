@@ -1,56 +1,63 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    public Transform playerTransform;
-    public float speed = 5.0f;
-    public float chaseRange = 5.0f;
-    public float stopRange = 1.0f;
-
-    private bool isChasing = false;
+    public float detectionRadius = 5f; // Радиус обнаружения игрока
+    public float attackRange = 1f; // Дальность атаки
+    public float moveSpeed = 2f; // Скорость передвижения врага
+    public int attackPower = 10; // Сила удара врага
+    private GameObject player; // Ссылка на игрока
+    private bool playerDetected = false; // Флаг, обозначающий, обнаружен ли игрок
+    private bool playerInRange = false; // Флаг, обозначающий, находится ли игрок в зоне атаки
 
     void Start()
     {
-        // ������� ������ �� ���� "Player"
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            playerTransform = player.transform;
-        }
+        player = GameObject.FindGameObjectWithTag("Player"); // Находим игрока по тегу
     }
 
     void Update()
     {
-        if (playerTransform == null)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position); // Вычисляем расстояние до игрока
+
+        // Если игрок находится в зоне обнаружения
+        if (distanceToPlayer < detectionRadius)
         {
-            return; // ����� �� ������, ������� �� ������
-        }
+            playerDetected = true;
 
-        // ��������� ���������� ����� ������ � �������
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
-
-        if (distanceToPlayer < chaseRange)
-        {
-            isChasing = true;
-        }
-
-        if (isChasing)
-        {
-            // ������������ ����� � ������� ������
-            Vector2 direction = (playerTransform.position - transform.position).normalized;
-            transform.right = direction;
-            transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
-
-
-            if (distanceToPlayer > stopRange)
+            // Если игрок находится в зоне атаки
+            if (distanceToPlayer < attackRange)
             {
-                
-                // ������� ����� � ����������� ������
-                direction = (playerTransform.position - transform.position).normalized;
-                transform.right = direction;
-                transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0, 0);
-
+                playerInRange = true;
+            }
+            else
+            {
+                playerInRange = false;
             }
         }
+        else
+        {
+            playerDetected = false;
+            playerInRange = false;
+        }
+
+        // Если игрок обнаружен
+        if (playerDetected)
+        {
+            // Сближаемся с игроком
+            Vector2 targetPosition = new Vector2(player.transform.position.x, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            // Если игрок в зоне атаки, атакуем его
+            //if (playerInRange)
+            //{
+            //    Attack();
+            //}
+        }
     }
+
+    //void Attack()
+    //{
+    //    // Наносим игроку урон
+    //    player.GetComponent<PlayerController>().TakeDamage(attackPower);
+    //}
 }
