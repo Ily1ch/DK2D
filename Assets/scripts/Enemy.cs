@@ -1,63 +1,47 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public float detectionRadius = 5f; // Радиус обнаружения игрока
-    public float attackRange = 1f; // Дальность атаки
-    public float moveSpeed = 2f; // Скорость передвижения врага
-    public int attackPower = 10; // Сила удара врага
-    private GameObject player; // Ссылка на игрока
-    private bool playerDetected = false; // Флаг, обозначающий, обнаружен ли игрок
-    private bool playerInRange = false; // Флаг, обозначающий, находится ли игрок в зоне атаки
+    public float detectionRadius = 5f;  // ������ ����������� ������
+    public float speed = 2f;  // �������� �����
+    public Transform player;  // ������ �� ������
+    private SpriteRenderer spriteRenderer;  // ������ �� ��������� ����������� �������
+    private bool isFacingRight = true;  // ���� ����������� �����
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); // Находим игрока по тегу
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position); // Вычисляем расстояние до игрока
-
-        // Если игрок находится в зоне обнаружения
-        if (distanceToPlayer < detectionRadius)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        if (IsPlayerDetected(distanceToPlayer))
         {
-            playerDetected = true;
-
-            // Если игрок находится в зоне атаки
-            if (distanceToPlayer < attackRange)
-            {
-                playerInRange = true;
-            }
-            else
-            {
-                playerInRange = false;
-            }
-        }
-        else
-        {
-            playerDetected = false;
-            playerInRange = false;
-        }
-
-        // Если игрок обнаружен
-        if (playerDetected)
-        {
-            // Сближаемся с игроком
-            Vector2 targetPosition = new Vector2(player.transform.position.x, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-
-            // Если игрок в зоне атаки, атакуем его
-            //if (playerInRange)
-            //{
-            //    Attack();
-            //}
+            FollowPlayer(distanceToPlayer);
+            FlipSpriteTowardsPlayer();
         }
     }
 
-    //void Attack()
-    //{
-    //    // Наносим игроку урон
-    //    player.GetComponent<PlayerController>().TakeDamage(attackPower);
-    //}
+    private bool IsPlayerDetected(float distanceToPlayer)
+    {
+        return distanceToPlayer <= detectionRadius;
+    }
+
+    private void FollowPlayer(float distanceToPlayer)
+    {
+        Vector2 direction = player.position - transform.position;
+        transform.Translate(direction.normalized * speed * Time.deltaTime);
+    }
+
+    private void FlipSpriteTowardsPlayer()
+    {
+        Vector2 direction = player.position - transform.position;
+        bool shouldFaceRight = (direction.x > 0);
+        if (shouldFaceRight != isFacingRight)
+        {
+            spriteRenderer.flipX = shouldFaceRight;
+            isFacingRight = shouldFaceRight;
+        }
+    }
 }
