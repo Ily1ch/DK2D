@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        currentHealth = MaxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -43,5 +44,19 @@ public class Enemy : MonoBehaviour
             spriteRenderer.flipX = shouldFaceRight;
             isFacingRight = shouldFaceRight;
         }
+    }
+    public float currentHealth;
+    public float MaxHealth = 100f;
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        //healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
+            Die();
+    }
+    void Die()
+    {
+        Destroy(this.gameObject, 0.5f);
     }
 }
