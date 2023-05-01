@@ -48,7 +48,7 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Atack();
-            TakeDamage(20);
+            
         }
         if (currentHealth < maxHealth)
         {
