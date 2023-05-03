@@ -6156,6 +6156,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 3
+  attackCooldown: 2
   currentHealth: 0
   MaxHealth: 100
 --- !u!50 &1030818405
