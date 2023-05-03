@@ -7,21 +7,37 @@ public class Enemy : MonoBehaviour
     public Transform player;  // —сылка на игрока
     private SpriteRenderer spriteRenderer;  // —сылка на компонент отображени€ спрайта
     private bool isFacingRight = true;  // ‘лаг направлени€ врага
-
+    public int enemyAttackDamage = 5;
+    public Animator anim;
+    public Transform attackPoint;
+    public LayerMask Player;
+    public float attackRange;
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.Play("static");
         currentHealth = MaxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
 
     void Update()
     {
+        Distance();
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (IsPlayerDetected(distanceToPlayer))
         {
             FollowPlayer(distanceToPlayer);
             FlipSpriteTowardsPlayer();
         }
+      
+        
+    }
+    void OnDrawGizmosSelected()
+    {
+        if (  attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     private bool IsPlayerDetected(float distanceToPlayer)
@@ -39,7 +55,7 @@ public class Enemy : MonoBehaviour
     {
         Vector2 direction = player.position - transform.position;
         bool shouldFaceRight = (direction.x > 0);
-        if (shouldFaceRight != isFacingRight)
+        if (shouldFaceRight == isFacingRight)
         {
             spriteRenderer.flipX = shouldFaceRight;
             isFacingRight = shouldFaceRight;
@@ -59,4 +75,21 @@ public class Enemy : MonoBehaviour
     {
         Destroy(this.gameObject, 0.5f);
     }
+    void Distance()
+    {
+        if (Vector2.Distance(player.transform.position, transform.position) <= attackRange)
+            Atack();
+    }
+    void Atack()
+    {
+       // anim.SetTrigger("Attack");
+
+        Collider2D hitEnemies = Physics2D.OverlapCircle(attackPoint.position, attackRange, Player);
+
+
+        hitEnemies.GetComponent<heromove>().TakeDamage(enemyAttackDamage);
+        
+       
+    }
+
 }

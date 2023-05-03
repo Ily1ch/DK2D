@@ -12,8 +12,8 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     //------- �������/�����, ����������� ��� ������� ���� ---------
 
     public int maxHealth = 100;
-    public int currentHealth=1;
-
+    public int currentHealth = 1;
+    [SerializeField] private TMPro.TextMeshProUGUI info;
     public HealthBar healthBar;
     public VectorValue pos;
 
@@ -39,6 +39,11 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     //------- �������/�����, ����������� ������ ���� � ���� ---------
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+            RefreshInfo();
+        else
+            if(Input.GetKeyUp(KeyCode.Tab))
+                info.gameObject.transform.parent.gameObject.SetActive(false);
         Walk();
         Reflect();
         Jump();
@@ -61,7 +66,11 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
             SwitchController();
         }
     }
-
+    private void RefreshInfo()
+    {
+        info.gameObject.transform.parent.gameObject.SetActive(true);
+        info.text = this.ToString();
+    }
     private void SwitchController()
     {
         if (activeController == playerController)
@@ -243,5 +252,9 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+    public override string ToString()
+    {
+        return $"Скорость: {speed}\nСила атаки: {attackDamage}";
     }
 }
