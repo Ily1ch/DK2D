@@ -13,6 +13,13 @@ public class Inventory : MonoBehaviour
     {
         invetoryOn = false;
     }
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            inventori();
+        }
+    }
     public void inventori()
     {
         if (invetoryOn == false)

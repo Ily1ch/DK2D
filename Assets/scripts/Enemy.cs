@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     public LayerMask Player;
     public float attackRange;
     public float attackCooldown = 2f; // врем€ между атаками
-    private bool canAttack = true; // флаг, позвол€ющий атаковать или нет\
+    private bool canAttack = true; // флаг, позвол€ющий атаковать или нет
     public float currentHealth;
     public float MaxHealth = 100f;
 
@@ -66,13 +66,13 @@ public class Enemy : MonoBehaviour
     {
         Vector2 direction = player.position - transform.position;
         bool shouldFaceRight = (direction.x > 0);
-        if (shouldFaceRight == isFacingRight)
+        if (shouldFaceRight != isFacingRight)
         {
-            spriteRenderer.flipX = shouldFaceRight;
+            spriteRenderer.flipX = !spriteRenderer.flipX;
             isFacingRight = shouldFaceRight;
         }
     }
-    
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

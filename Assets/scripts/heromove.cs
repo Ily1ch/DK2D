@@ -65,6 +65,8 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         {
             SwitchController();
         }
+        
+            
     }
     private void RefreshInfo()
     {
@@ -255,6 +257,6 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     }
     public override string ToString()
     {
-        return $"Скорость: {speed}\nСила атаки: {attackDamage} Максимально хп: {maxHealth} Текущее хп: {currentHealth}";
+        return $"Скорость: {speed}\nСила атаки: {attackDamage}\nМаксимально хп: {maxHealth} \nТекущее хп: {currentHealth}";
     }
 }
