@@ -490,7 +490,7 @@ TextureImporter:
         serializedVersion: 2
         x: 268
         y: 176
-        width: 23
+        width: 25
         height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -501,27 +501,6 @@ TextureImporter:
       bones: []
       spriteID: 2b15d46f68b2772429c0f8a8f5b556d2
       internalID: 328633449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NightBorne_19
-      rect:
-        serializedVersion: 2
-        x: 285
-        y: 188
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c46151b488fb6c4ea3da5a5853b4d6f
-      internalID: 36851521
       vertices: []
       indices: 
       edges: []
@@ -846,9 +825,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1122
-        y: 3
+        y: 2
         width: 71
-        height: 54
+        height: 58
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -863,34 +842,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NightBorne_36
-      rect:
-        serializedVersion: 2
-        x: 1173
-        y: 52
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d706e764ff6f3df44949fab8a591f5dc
-      internalID: 2028741480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: NightBorne_37
       rect:
         serializedVersion: 2
         x: 1203
         y: 7
         width: 66
-        height: 49
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -900,27 +858,6 @@ TextureImporter:
       bones: []
       spriteID: 8b3dd19d3f8aee345ac343e24bf9e8e6
       internalID: -2126596938
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NightBorne_38
-      rect:
-        serializedVersion: 2
-        x: 1251
-        y: 53
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf2c124379e5a6644882ebf1f50331f6
-      internalID: -1494515968
       vertices: []
       indices: 
       edges: []
@@ -1299,27 +1236,6 @@ TextureImporter:
       bones: []
       spriteID: be9c9e5d32ac54a4db03ef24fd233c95
       internalID: 1745447090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NightBorne_57
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 2
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eba37db516f69545ac3b742d4f31246
-      internalID: -953842301
       vertices: []
       indices: 
       edges: []

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
+public class EnemyGhost : MonoBehaviour
 {
     public float detectionRadius = 5f;
     public float speed = 2f;
