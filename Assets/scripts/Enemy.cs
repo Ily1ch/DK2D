@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private bool canAttack = true; // флаг, позвол€ющий атаковать или нет
     public float currentHealth;
     public float MaxHealth = 100f;
+    public float timeToDie = 0;
 
     void Start()
     {
@@ -82,16 +83,21 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(this.gameObject, 0.5f);
+        anim.Play("death");
+        Destroy(this.gameObject, timeToDie);
     }
 
     void Attack()
     {
-        Collider2D hitEnemies = Physics2D.OverlapCircle(attackPoint.position, attackRange, Player);
-        if (hitEnemies != null)
+        anim.SetTrigger("attacking");
+
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, Player);
+
+        foreach (Collider2D player in hitPlayer)
         {
-            hitEnemies.GetComponent<heromove>().TakeDamage(enemyAttackDamage);
+            player.GetComponent<heromove>().TakeDamage(enemyAttackDamage);
         }
+        
     }
     void OnDrawGizmosSelected()
     {
