@@ -239,10 +239,13 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] breakablewall = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, breakableWall);
-
+        //foreach (Collider2D enemy in hitEnemies)
+        //{
+        //    enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+        //}
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            enemy.GetComponent<TEstEnemy>().TakeDamage(attackDamage);
         }
         foreach (Collider2D wall in breakablewall)
         {

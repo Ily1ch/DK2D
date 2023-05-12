@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        anim.Play("death");
+        //anim.Play("death");
         Destroy(this.gameObject, timeToDie);
     }
 
