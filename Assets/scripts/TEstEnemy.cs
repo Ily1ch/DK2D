@@ -50,10 +50,11 @@ public class TEstEnemy : MonoBehaviour
             }
         }
     }
-
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
+        var t = new Vector2(transform.position.x + 2, transform.position.y) ;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
