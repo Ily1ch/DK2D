@@ -30,9 +30,10 @@ public class TEstEnemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
-
+    
     private void Update()
     {
+        //anim.SetBool("attacking 0", false);
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (IsPlayerDetected(distanceToPlayer))
         {
@@ -41,26 +42,26 @@ public class TEstEnemy : MonoBehaviour
         }
         else
         {
-            anim.Play("idle");
+            anim.SetBool("walk",false);
         }
         cooldownTimer += Time.deltaTime;
-        if (!PlayerInSight())
+        if (PlayerInSight())
         {
             if (cooldownTimer >= attackCooldown)
             {
-                
                 cooldownTimer = 0;
-                anim.SetTrigger("attacking");
+                anim.SetBool("walk", false);
+                anim.Play("attacking");
+                //anim.StopPlayback();
+
+                //anim.SetBool("attacking 0",true);
             }
-            else if (anim.GetCurrentAnimatorStateInfo(0).IsName("attacking"))
-            {
-                anim.SetBool("walking", false);
-            }
-        }
-        
+        } 
     }
+
     private bool PlayerInSight()
     {
+        
         RaycastHit2D hit = 
             Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x*colliderDistance, 
             new Vector3( boxCollider.bounds.size.x*range,boxCollider.bounds.size.y,boxCollider.bounds.size.z),
@@ -114,7 +115,7 @@ public class TEstEnemy : MonoBehaviour
         anim.SetTrigger("die");
         Destroy(this.gameObject, timeToDie);
     }
-
+    
     private bool IsPlayerDetected(float distanceToPlayer)
     {
         return distanceToPlayer <= detectionRadius;
@@ -125,6 +126,7 @@ public class TEstEnemy : MonoBehaviour
         anim.SetBool("walk", true);
         Vector2 direction = player.position - transform.position;
         transform.Translate(direction.normalized * speed * Time.deltaTime);
+
     }
 
     private void FlipSpriteTowardsPlayer()
