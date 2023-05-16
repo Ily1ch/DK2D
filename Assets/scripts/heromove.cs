@@ -6,6 +6,7 @@ using UnityEditor;
 using System.Threading.Tasks;
 using System.Threading;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
@@ -52,7 +53,7 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
         Somersault();
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Atack();
+            Attack();
             
         }
         if (currentHealth < maxHealth)
@@ -60,7 +61,7 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
             RegenerateHealth();
         }
         healthBar.SetHealth(currentHealth);
-
+        
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             SwitchController();
@@ -229,27 +230,43 @@ public class heromove : MonoBehaviour // - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½PlayerMoveï¿½ ï
     //------- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ---------
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public LayerMask EnemyGhost;
     public LayerMask breakableWall;
     public float attackRange = 0.5f;
     public int attackDamage = 10;
 
-    void Atack()
+    void Attack()
     {
         anim.SetTrigger("Attack");
 
+        Collider2D[] hitEnemiesGhost = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-        Collider2D[] breakablewall = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, breakableWall);
-        //foreach (Collider2D enemy in hitEnemies)
-        //{
-        //    enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-        //}
-        foreach (Collider2D enemy in hitEnemies)
+        Collider2D[] breakableWalls = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, breakableWall);
+
+        Collider2D[] allEnemies = hitEnemiesGhost.Concat(hitEnemies).ToArray();
+
+        foreach (Collider2D enemy in allEnemies)
         {
-            enemy.GetComponent<TEstEnemy>().TakeDamage(attackDamage);
+            EnemyGhost enemyGhost = enemy.GetComponent<EnemyGhost>();
+            TEstEnemy enemyTest = enemy.GetComponent<TEstEnemy>();
+
+            if (enemyGhost != null)
+            {
+                enemyGhost.TakeDamageGhost(attackDamage);
+            }
+            else if (enemyTest != null)
+            {
+                enemyTest.TakeDamage(attackDamage);
+            }
         }
-        foreach (Collider2D wall in breakablewall)
+
+        foreach (Collider2D wall in breakableWalls)
         {
-            wall.GetComponent<BreakableWall>().TakeDamageWall(attackDamage);
+            BreakableWall breakable = wall.GetComponent<BreakableWall>();
+            if (breakable != null)
+            {
+                breakable.TakeDamageWall(attackDamage);
+            }
         }
     }
     void OnDrawGizmosSelected()

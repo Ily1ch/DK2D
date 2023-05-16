@@ -18,6 +18,7 @@ public class TEstEnemy : MonoBehaviour
     public float timeToDie = 0;
     public float detectionRadius;
     public float speed ;
+    public float distanceStopToAttack;
     public Transform player;
     private SpriteRenderer spriteRenderer;
     private bool isFacingRight = true;
@@ -36,14 +37,12 @@ public class TEstEnemy : MonoBehaviour
         //anim.SetBool("attacking 0", false);
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (IsPlayerDetected(distanceToPlayer))
-        {
-            FollowPlayer(distanceToPlayer);
             FlipSpriteTowardsPlayer();
-        }
+        if (IsPlayerDetected(distanceToPlayer)&&distanceToPlayer > distanceStopToAttack)
+            FollowPlayer(distanceToPlayer);
         else
-        {
             anim.SetBool("walk",false);
-        }
+
         cooldownTimer += Time.deltaTime;
         if (PlayerInSight())
         {
@@ -51,7 +50,7 @@ public class TEstEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetBool("walk", false);
-                anim.Play("attacking");
+                anim.SetTrigger("attacking");
                 //anim.StopPlayback();
 
                 //anim.SetBool("attacking 0",true);

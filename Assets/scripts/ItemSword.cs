@@ -14,7 +14,6 @@ public class ItemSword : MonoBehaviour
             if (attackDamage != null)
             {
                 attackDamage.attackDamage += damageBonus;
-                Destroy(gameObject);
             }
         }
     }

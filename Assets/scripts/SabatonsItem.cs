@@ -15,7 +15,6 @@ public class SabatonsItem : MonoBehaviour
             if (SpeedHero != null)
             {
                 SpeedHero.speed += Speed;
-                Destroy(gameObject);
             }
         }
     }
