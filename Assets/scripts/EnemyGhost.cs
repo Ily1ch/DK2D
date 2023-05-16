@@ -14,7 +14,7 @@ public class EnemyGhost : MonoBehaviour
     private Animator anim;
 
     public float currentHealth;
-    public float timeToDie = 0;
+    public float timeToDie;
     public float detectionRadius;
     public float speed;
     public float distanceStopToAttack;
@@ -50,9 +50,6 @@ public class EnemyGhost : MonoBehaviour
                 cooldownTimer = 0;
                 anim.SetBool("walk", false);
                 anim.SetTrigger("attacking");
-                //anim.StopPlayback();
-
-                //anim.SetBool("attacking 0",true);
             }
         }
     }
@@ -106,6 +103,7 @@ public class EnemyGhost : MonoBehaviour
         yield return new WaitForSeconds(2f); // ”становите продолжительность задержки по своему усмотрению
         speed = 3f; // ¬осстановите исходное значение скорости
     }
+
 
     void Die()
     {
