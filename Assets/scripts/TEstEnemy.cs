@@ -56,6 +56,7 @@ public class TEstEnemy : MonoBehaviour
                 //anim.SetBool("attacking 0",true);
             }
         } 
+
     }
 
     private bool PlayerInSight()
@@ -124,9 +125,10 @@ public class TEstEnemy : MonoBehaviour
     {
         anim.SetBool("walk", true);
         Vector2 direction = player.position - transform.position;
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
-
+        Vector2 movement = new Vector2(direction.normalized.x * speed * Time.deltaTime, 0f); // Движение только по оси X
+        transform.Translate(movement);
     }
+
 
     private void FlipSpriteTowardsPlayer()
     {
@@ -134,7 +136,11 @@ public class TEstEnemy : MonoBehaviour
         bool shouldFaceRight = (direction.x > 0);
         if (shouldFaceRight != isFacingRight)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+            Vector3 newScale = transform.localScale;
+            newScale.x *= -1;
+            transform.localScale = newScale;
+
+            Debug.Log("New Scale X: " + transform.localScale.x); // Отладочный вывод
             isFacingRight = shouldFaceRight;
         }
     }

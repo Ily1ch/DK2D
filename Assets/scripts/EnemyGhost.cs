@@ -131,8 +131,14 @@ public class EnemyGhost : MonoBehaviour
         bool shouldFaceRight = (direction.x > 0);
         if (shouldFaceRight != isFacingRight)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+            Vector3 newScale = transform.localScale;
+            newScale.x *= -1;
+            transform.localScale = newScale;
+
+            Debug.Log("New Scale X: " + transform.localScale.x); // Отладочный вывод
             isFacingRight = shouldFaceRight;
         }
     }
+
+
 }
