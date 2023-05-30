@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5a848d52a14f51b4b9b21aba5568a3c9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sehnsucht Font
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 03d4d96b2d091b24b931bc662c55fd62, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

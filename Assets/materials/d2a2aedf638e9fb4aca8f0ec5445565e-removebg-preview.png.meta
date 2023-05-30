@@ -152,9 +152,9 @@ TextureImporter:
       name: d2a2aedf638e9fb4aca8f0ec5445565e-removebg-preview_3
       rect:
         serializedVersion: 2
-        x: 306
+        x: 311
         y: 169
-        width: 86
+        width: 78
         height: 94
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -173,9 +173,9 @@ TextureImporter:
       name: d2a2aedf638e9fb4aca8f0ec5445565e-removebg-preview_4
       rect:
         serializedVersion: 2
-        x: 396
+        x: 399
         y: 364
-        width: 161
+        width: 156
         height: 49
       alignment: 7
       pivot: {x: 0.5, y: 0}
