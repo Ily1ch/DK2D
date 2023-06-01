@@ -123,13 +123,18 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     {
         if ((moveVector.x > 0 && !faceRight) || (moveVector.x < 0 && faceRight))
         {
-            transform.localScale *= new Vector2(-1, 1);
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.flipX = !spriteRenderer.flipX;
             faceRight = !faceRight;
+
+            // Поворот attackPoint вместе с персонажем
+            attackPoint.localPosition = new Vector3(-attackPoint.localPosition.x, attackPoint.localPosition.y, attackPoint.localPosition.z);
         }
-        
     }
+
+
     //------- �������/����� ��� ������ ---------
-    
+
     public int jumpCount = 0;
     public int maxJumpValue = 2;
     public int jumpForce = 10;
