@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6099752574961357225}
   - component: {fileID: 309017149778147840}
   - component: {fileID: 8629809762935252218}
-  - component: {fileID: 3474450477133871375}
+  - component: {fileID: -8008495067766744803}
   m_Layer: 7
   m_Name: BOSS
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6884925004098692401
 SpriteRenderer:
@@ -180,7 +180,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3474450477133871375
+--- !u!114 &-8008495067766744803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,20 +189,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7190497820858384772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cda48e1647e6914ea43331f362196fc, type: 3}
+  m_Script: {fileID: 11500000, guid: c4998563ab2d62e4b9ac6d04486eaca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 0
-  range: 0.61
-  colliderDistance: 2.64
-  damage: 25
-  boxCollider: {fileID: 6099752574961357225}
+  range: 0
+  colliderDistance: 0
+  damage: 0
+  boxCollider: {fileID: 0}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 256
-  currentHealth: 1000
-  timeToDie: 1.5
-  detectionRadius: 26
-  speed: 6
-  distanceStopToAttack: 11
+    m_Bits: 0
+  currentHealth: 0
+  timeToDie: 0
+  detectionRadius: 0
+  speed: 0
+  distanceStopToAttack: 0
   player: {fileID: 0}
