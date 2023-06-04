@@ -43,8 +43,8 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         if (Input.GetKeyDown(KeyCode.Tab))
             RefreshInfo();
         else
-            if(Input.GetKeyUp(KeyCode.Tab))
-                info.gameObject.transform.parent.gameObject.SetActive(false);
+            if (Input.GetKeyUp(KeyCode.Tab))
+            info.gameObject.transform.parent.gameObject.SetActive(false);
         Walk();
         Reflect();
         Jump();
@@ -54,20 +54,20 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
-            
+
         }
         if (currentHealth < maxHealth)
         {
             RegenerateHealth();
         }
         healthBar.SetHealth(currentHealth);
-        
+
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             SwitchController();
         }
-        
-            
+
+
     }
     private void RefreshInfo()
     {
@@ -220,15 +220,16 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         if (currentHealth <= 0)
             Die();
 
-        
+
     }
 
     void Die()
     {
         //animator.Play("Die");
         //animator.SetBool("Die", true);
-        Destroy(this.gameObject, 0.5f);
-        SceneManager.LoadScene(1);
+        //Destroy(this.gameObject, 0.5f);
+        //SceneManager.LoadScene(1);
+        LoadPlayer();
     }
 
 
@@ -283,5 +284,29 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     public override string ToString()
     {
         return $"Скорость: {speed}\nСила атаки: {attackDamage}\nМаксимально хп: {maxHealth} \nТекущее хп: {currentHealth}";
+    }
+
+    //SaveSystem
+
+    public void SavePlayer() //для кнопки сохранить
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        currentHealth = data.currentHealth;
+        maxHealth = data.maxHealth;
+        attackDamage = data.attackDamage;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+
     }
 }

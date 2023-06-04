@@ -1,29 +1,14 @@
 using UnityEngine;
 
-
-
 public class TriggerActivation : MonoBehaviour
 {
-    public GameObject targetObject;
-    public BossScript1 bossScript;
+    public GameObject targetObject; // Объект, который нужно включить
 
-        private bool hasBeenActivated; // Флаг активации объекта
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Boss") && !hasBeenActivated)
+        if (other.CompareTag("Player")) // Замените "Player" на тег объекта, который должен касаться триггера
         {
-            hasBeenActivated = true; // Устанавливаем флаг активации объекта
-
-            targetObject.SetActive(true); // Включаем объект
-
-            // Проверяем здоровье босса
-            if (BossScript1.curr <= 0)
-            {
-                targetObject.SetActive(false); // Выключаем объект
-            }
+            targetObject.SetActive(true); // Включить объект
         }
     }
 }
-
-
