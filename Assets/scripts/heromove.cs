@@ -17,10 +17,12 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     [SerializeField] private TMPro.TextMeshProUGUI info;
     public HealthBar healthBar;
     public VectorValue pos;
-
+    public AudioSource hitSound;
+    public AudioSource Jump1;
+    public AudioSource shagplayer;
+    public AudioSource SwordSound;
     public RuntimeAnimatorController playerController;
     public RuntimeAnimatorController style2PlayerController;
-
     private RuntimeAnimatorController activeController;
 
     public Rigidbody2D rb;
@@ -115,7 +117,6 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         moveVector.x = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector3(moveVector.x * speed, rb.velocity.y);
         anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
-
     }
     //------- �������/����� ��� ��������� ��������� �� ����������� ---------
     public bool faceRight = true;
@@ -140,6 +141,7 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     public int jumpForce = 10;
     void Jump()
     {
+        
         if (Input.GetKeyDown(KeyCode.Space) && (onGround || (++jumpCount < maxJumpValue)))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -215,7 +217,7 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        hitSound.Play();
         //healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
             Die();
@@ -244,7 +246,7 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     void Attack()
     {
         anim.SetTrigger("Attack");
-
+        SwordSound.Play();
         Collider2D[] hitEnemiesGhost = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] breakableWalls = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, breakableWall);
@@ -285,7 +287,14 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     {
         return $"Скорость: {speed}\nСила атаки: {attackDamage}\nМаксимально хп: {maxHealth} \nТекущее хп: {currentHealth}";
     }
-
+    public void PlayJumpSound()
+    {
+        Jump1.Play();
+    }
+    public void PlayFootstepSound()
+    {
+        shagplayer.Play();
+    }
     //SaveSystem
 
     public void SavePlayer() //для кнопки сохранить
