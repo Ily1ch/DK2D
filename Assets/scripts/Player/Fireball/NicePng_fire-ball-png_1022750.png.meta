@@ -1,0 +1,424 @@
+fileFormatVersion: 2
+guid: 4be50e968310eb8429da198ae120efdc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 376
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee46bff9103c06040aaeefeee3d3b59c
+      internalID: 46468401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 374
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d854a728d523e44b90a2629a385d5e
+      internalID: 1718233979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 374
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502063d437e594d46b07ecf41f8cae19
+      internalID: -109877635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 375
+        width: 35
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85ff3bcfbffc134fa39148afb33bb7f
+      internalID: -120991550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 251
+        width: 44
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b06f7d85ea048498e60433fe87f667
+      internalID: 82364924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_6
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 250
+        width: 45
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff8c6e504a7b0040a067ca144e81262
+      internalID: 1751026429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_8
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 251
+        width: 62
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdea297cb4441db4fa6d86a10017ab30
+      internalID: -915320316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_12
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 251
+        width: 75
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de811691091a1f49b68727ff97fe241
+      internalID: 886273024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 125
+        width: 69
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00141bada4c3b5d45891134e73edb603
+      internalID: 179499564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_19
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 126
+        width: 72
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5959357f21529594596fc793b7d4c85a
+      internalID: 999412209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_20
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 124
+        width: 69
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577fdf7b501eb364e9a258eb4ccf6629
+      internalID: 520750070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_23
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 125
+        width: 73
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e760e5b8e9d73634fb0bcc4af44a66da
+      internalID: 1932246068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_fire-ball-png_1022750_26
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 72
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d9b6f1665ff3844a926de867c6160f
+      internalID: -2061336508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      NicePng_fire-ball-png_1022750_0: 46468401
+      NicePng_fire-ball-png_1022750_1: 1718233979
+      NicePng_fire-ball-png_1022750_10: -1315922722
+      NicePng_fire-ball-png_1022750_11: 2105276021
+      NicePng_fire-ball-png_1022750_12: 886273024
+      NicePng_fire-ball-png_1022750_13: 142489590
+      NicePng_fire-ball-png_1022750_14: 1427699784
+      NicePng_fire-ball-png_1022750_15: 1763731039
+      NicePng_fire-ball-png_1022750_16: -551478317
+      NicePng_fire-ball-png_1022750_17: 179499564
+      NicePng_fire-ball-png_1022750_18: -1053578138
+      NicePng_fire-ball-png_1022750_19: 999412209
+      NicePng_fire-ball-png_1022750_2: -109877635
+      NicePng_fire-ball-png_1022750_20: 520750070
+      NicePng_fire-ball-png_1022750_21: 2043615536
+      NicePng_fire-ball-png_1022750_22: -1839640024
+      NicePng_fire-ball-png_1022750_23: 1932246068
+      NicePng_fire-ball-png_1022750_24: -1695157960
+      NicePng_fire-ball-png_1022750_25: 466540503
+      NicePng_fire-ball-png_1022750_26: -2061336508
+      NicePng_fire-ball-png_1022750_3: -120991550
+      NicePng_fire-ball-png_1022750_4: -231129761
+      NicePng_fire-ball-png_1022750_5: 82364924
+      NicePng_fire-ball-png_1022750_6: 1751026429
+      NicePng_fire-ball-png_1022750_7: 176672370
+      NicePng_fire-ball-png_1022750_8: -915320316
+      NicePng_fire-ball-png_1022750_9: 1343667852
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

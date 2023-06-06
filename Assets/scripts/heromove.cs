@@ -8,10 +8,8 @@ using System.Threading;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class heromove : MonoBehaviour // - ������ �PlayerMove� ������ ���� ��� ����� �������
+public class heromove : MonoBehaviour
 {
-    //------- �������/�����, ����������� ��� ������� ���� ---------
-
     public int maxHealth = 100;
     public int currentHealth = 1;
     [SerializeField] private TMPro.TextMeshProUGUI info;
@@ -36,10 +34,8 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         anim = GetComponent<Animator>();
         activeController = playerController;
         anim.runtimeAnimatorController = activeController;
-        //-v- ��� ��������������� ������������ � ����������, ������� ���������� ������� �GroundCheck�
         GroundCheckRadius = GroundCheck.GetComponent<CircleCollider2D>().radius;
     }
-    //------- �������/�����, ����������� ������ ���� � ���� ---------
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -68,8 +64,6 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         {
             SwitchController();
         }
-
-
     }
     private void RefreshInfo()
     {
@@ -80,13 +74,11 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     {
         if (activeController == playerController)
         {
-            // ���� ������� �������� ���������� - Player, �� ����������� �� 2stylePlayer
             anim.runtimeAnimatorController = style2PlayerController;
             activeController = style2PlayerController;
         }
         else
         {
-            // ����� ����������� �� Player
             anim.runtimeAnimatorController = playerController;
             activeController = playerController;
         }
@@ -107,25 +99,21 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
             }
         }
     }
-    //---------------------------------------
-
-    //------- �������/����� ��� ����������� ��������� �� ����������� ---------
+    //walk and Reflect
     public Vector2 moveVector;
     public int speed = 3;
+    public bool faceRight = true;
     void Walk()
     {
         moveVector.x = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector3(moveVector.x * speed, rb.velocity.y);
         anim.SetFloat("moveX", Mathf.Abs(moveVector.x));
     }
-    //------- �������/����� ��� ��������� ��������� �� ����������� ---------
-    public bool faceRight = true;
     void Reflect()
     {
         if ((moveVector.x > 0 && !faceRight) || (moveVector.x < 0 && faceRight))
         {
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             faceRight = !faceRight;
 
             // Поворот attackPoint вместе с персонажем
@@ -134,14 +122,13 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
     }
 
 
-    //------- �������/����� ��� ������ ---------
-
+    //Jump
     public int jumpCount = 0;
     public int maxJumpValue = 2;
     public int jumpForce = 10;
     void Jump()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.Space) && (onGround || (++jumpCount < maxJumpValue)))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -149,7 +136,7 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         if (onGround) { jumpCount = 0; }
     }
 
-    //------- �������/����� ��� ����������� ����� ---------
+    //CheckingGround
     public bool onGround;
     public LayerMask Ground;
     public Transform GroundCheck;
@@ -159,13 +146,12 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         onGround = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, Ground);
         anim.SetBool("onGround", onGround);
     }
-    //--------------------------------------------------------����---------
 
-    //------- �������/����� ��� ����� ---------
+
+    //Dash
     public int dashForce = 1000;
-    public float dashCooldown = 1f; // ����� ����������� � ��������
-    private float lastDashTime = -Mathf.Infinity; // ����� ���������� ������������� �����������
-
+    public float dashCooldown = 1f;
+    private float lastDashTime = -Mathf.Infinity;
     void Dash()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
@@ -184,14 +170,13 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
                 rb.AddForce(Vector2.right * dashForce);
             }
 
-            lastDashTime = Time.time; // ������������� ����� ���������� ������������� �����������
+            lastDashTime = Time.time;
         }
     }
-    //------- �������/����� ��� ������� ---------
+    //Somersault
     public int SomersaultForce = 1000;
-    public float SomersaultCooldown = 1f; // ����� ����������� � ��������
-    private float lastSomersaultTime = -Mathf.Infinity; // ����� ���������� ������������� �����������
-
+    public float SomersaultCooldown = 1f;
+    private float lastSomersaultTime = -Mathf.Infinity;
     void Somersault()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl) && Time.time > lastSomersaultTime + SomersaultCooldown)
@@ -210,10 +195,10 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
                 rb.AddForce(Vector2.right * SomersaultForce);
             }
 
-            lastSomersaultTime = Time.time; // ������������� ����� ���������� ������������� �����������
+            lastSomersaultTime = Time.time;
         }
     }
-
+    //Takedamage
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -224,7 +209,6 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
 
 
     }
-
     void Die()
     {
         //animator.Play("Die");
@@ -234,15 +218,13 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
         LoadPlayer();
     }
 
-
-    //------- �������/����� ��� ����� ---------
+    //Attack
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public LayerMask EnemyGhost;
     public LayerMask breakableWall;
     public float attackRange = 0.5f;
     public int attackDamage = 10;
-
     void Attack()
     {
         anim.SetTrigger("Attack");
@@ -277,6 +259,7 @@ public class heromove : MonoBehaviour // - ������ �PlayerMove� �
             }
         }
     }
+
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
