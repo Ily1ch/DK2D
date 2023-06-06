@@ -15,6 +15,7 @@ public class TEstEnemy : MonoBehaviour
     private Animator anim;
     public AudioSource hitSound;
     public AudioSource SwordSound;
+    
     public float currentHealth;
     public float timeToDie = 0;
     public float detectionRadius;
