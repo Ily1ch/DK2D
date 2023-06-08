@@ -19,9 +19,15 @@ public class heromove : MonoBehaviour
     public AudioSource Jump1;
     public AudioSource shagplayer;
     public AudioSource SwordSound;
+    public AudioSource somersault;
+    public AudioSource dash;
+    public AudioSource FireBall;
     public RuntimeAnimatorController playerController;
     public RuntimeAnimatorController style2PlayerController;
     private RuntimeAnimatorController activeController;
+
+    public float attackCooldown = 0.5f;
+    private float lastAttackTime = -Mathf.Infinity;
 
     public Rigidbody2D rb;
     public Animator anim;
@@ -51,8 +57,11 @@ public class heromove : MonoBehaviour
         Somersault();
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Attack();
-
+            if (Time.time > lastAttackTime + attackCooldown)
+            {
+                Attack();
+                lastAttackTime = Time.time;
+            }
         }
         if (currentHealth < maxHealth)
         {
@@ -273,6 +282,18 @@ public class heromove : MonoBehaviour
     public void PlayJumpSound()
     {
         Jump1.Play();
+    }
+    public void PlaySomersaultSound()
+    {
+        somersault.Play();
+    }
+    public void PlayDashSound()
+    {
+        dash.Play();
+    }
+    public void PlayFireBallSound()
+    {
+        FireBall.Play();
     }
     public void PlayFootstepSound()
     {
