@@ -122,13 +122,19 @@ public class heromove : MonoBehaviour
     {
         if ((moveVector.x > 0 && !faceRight) || (moveVector.x < 0 && faceRight))
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            faceRight = !faceRight;
-
-            // Поворот attackPoint вместе с персонажем
-            attackPoint.localPosition = new Vector3(-attackPoint.localPosition.x, attackPoint.localPosition.y, attackPoint.localPosition.z);
+            Flip();
         }
     }
+
+    void Flip()
+    {
+        faceRight = !faceRight;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); // Поворот персонажа по оси X
+
+        // Поворот attackPoint вместе с персонажем
+        attackPoint.localScale = new Vector3(-attackPoint.localScale.x, attackPoint.localScale.y, attackPoint.localScale.z);
+    }
+
 
 
     //Jump

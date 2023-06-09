@@ -97,12 +97,12 @@ public class TEstEnemy : MonoBehaviour
         currentHealth -= damage;
         anim.SetTrigger("takedamage");
         hitSound.Play();
-        if (currentHealth <= 0)
-            Die();
+        if (currentHealth > 0)
+            StartCoroutine(TemporarySpeedReduction());
         else
         {
             //под сомнением !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            StartCoroutine(TemporarySpeedReduction());
+            Die();
         }
     }
     //под сомнением !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
