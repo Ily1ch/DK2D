@@ -56,6 +56,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
+  hitSound: {fileID: 0}
+  SwordSound: {fileID: 0}
   currentHealth: 100
   timeToDie: 1.5
   detectionRadius: 19
@@ -174,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -828119487, guid: 53b63b40adb15ad4aae9263f9a92df5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
