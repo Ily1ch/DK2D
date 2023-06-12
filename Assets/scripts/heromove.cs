@@ -257,11 +257,11 @@ public class heromove : MonoBehaviour
 
             if (enemyGhost != null)
             {
-                enemyGhost.TakeDamageGhost(attackDamage);
+                enemyGhost.TakeDamageGhost(attackDamage/2);
             }
             else if (enemyTest != null)
             {
-                enemyTest.TakeDamage(attackDamage);
+                enemyTest.TakeDamage(attackDamage/2);
             }
         }
 
@@ -281,6 +281,7 @@ public class heromove : MonoBehaviour
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    Projectile fireball = new Projectile();
     public override string ToString()
     {
         return $"Скорость: {speed}\nСила атаки: {attackDamage}\nМаксимально хп: {maxHealth} \nТекущее хп: {currentHealth}";
