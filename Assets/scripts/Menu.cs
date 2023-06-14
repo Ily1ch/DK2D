@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void Settings()
     {
@@ -20,6 +20,6 @@ public class Menu : MonoBehaviour
     }
     public void ExitSettings()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
