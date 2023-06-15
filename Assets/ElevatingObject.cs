@@ -1,38 +1,46 @@
 using UnityEngine;
 
-public class ElevatingObject : MonoBehaviour
+public class TeleportationObject : MonoBehaviour
 {
     [SerializeField] private float targetX; // Целевая координата X для перемещения игрока
     [SerializeField] private float targetY; // Целевая координата Y для перемещения игрока
     [SerializeField] private float targetZ; // Целевая координата Z для перемещения игрока
     public Animator anim;
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    private bool isTriggered = false; // Флаг, указывающий, активирован ли триггер
 
-        if (other.CompareTag("Player"))
+    private void Update()
+    {
+        if (isTriggered && Input.GetKeyDown(KeyCode.T)) // Измените KeyCode на нужную вам кнопку
         {
-            anim.SetBool("StartOpen", true);
+            TeleportPlayer();
         }
-        
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
+            isTriggered = true;
+            anim.SetBool("StartOpen", true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isTriggered = false;
             anim.SetBool("StartOpen", false);
         }
     }
 
-
-    public void Teleportation(Collider2D other)
+    private void TeleportPlayer()
     {
-        other.transform.position = new Vector3(targetX, targetY, targetZ);
+        Vector3 newPosition = new Vector3(targetX, targetY, targetZ);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.transform.position = newPosition;
+        }
     }
 }
-
-
-//if (other.CompareTag("Player"))
-//{
-//    other.transform.position = new Vector3(targetX, targetY, targetZ);
-//}

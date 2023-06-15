@@ -14,7 +14,7 @@ public class heromove : MonoBehaviour
     public int currentHealth = 1;
     [SerializeField] private TMPro.TextMeshProUGUI info;
     public HealthBar healthBar;
-    public VectorValue pos;
+    //public VectorValue pos;
     public AudioSource hitSound;
     public AudioSource Jump1;
     public AudioSource shagplayer;
@@ -33,7 +33,7 @@ public class heromove : MonoBehaviour
     public Animator anim;
     void Start()
     {
-        transform.position = pos.initialValue;
+        //transform.position = pos.initialValue;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
