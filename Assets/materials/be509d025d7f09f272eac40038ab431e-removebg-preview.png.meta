@@ -110,9 +110,9 @@ TextureImporter:
       name: be509d025d7f09f272eac40038ab431e-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 125
-        width: 136
+        width: 134
         height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

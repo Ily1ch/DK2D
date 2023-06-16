@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5240751080559649755}
   - component: {fileID: 2679453039830540615}
   - component: {fileID: 6490924892814077787}
+  - component: {fileID: 7589724385997367392}
   m_Layer: 0
   m_Name: "\u0421\u0430\u0431\u0430\u0442\u043E\u043D\u044B \u0414\u0440\u0435\u0432\u043D\u0435\u0439\u0448\u0435\u0433\u043E
     \u0413\u043E\u043B\u0435\u043C\u0430 1"
@@ -173,3 +174,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HpBonus: 100
+  healthBar: {fileID: 0}
+--- !u!114 &7589724385997367392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763176841564885789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867b48de7ac038d42a7c7c81495e1458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotButton: {fileID: 7517989365650501671, guid: 6d7561995ca5d3b47a0552b51c54577d, type: 3}

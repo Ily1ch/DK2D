@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4014572261470163547}
   - component: {fileID: 5787122599951564415}
   - component: {fileID: 4106689581723930597}
+  - component: {fileID: -6922645927048863612}
   m_Layer: 0
   m_Name: "\u0421\u0430\u0431\u0430\u0442\u043E\u043D\u044B \u0441\u043C\u0435\u0440\u0442\u0438"
   m_TagString: Untagged
@@ -172,3 +173,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-6922645927048863612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796423698491625271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867b48de7ac038d42a7c7c81495e1458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotButton: {fileID: 3035170318458852734, guid: fa3585e793ed7704f8cbdd6f8214a68e, type: 3}
