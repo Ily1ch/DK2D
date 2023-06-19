@@ -8,7 +8,11 @@ public class Menu : MonoBehaviour
 { 
     public void ExitGame()
     {
-        Debug.Break();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
     public void StartGame()
     {

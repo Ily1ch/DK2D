@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Assets.N.Fridman.BackgroundInstanceController.Scripts.BackgroundInstanceControllerComponent">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Music\BackgroundInstanceControllerComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Music">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAACAABAAAABAAAAAAgAAAAAAAEA=</HashCode>
+      <FileName>Assets\Music\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAABAAAAAQAAAACAAAEA=</HashCode>
+      <FileName>Assets\Music\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriggerSound">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Music\TriggerSound.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.N.Fridman.SoundVolumeController.Scripts.SoundVolumeControllerComponent">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAABAAIAAADIAAAEAAACAEA=</HashCode>
+      <FileName>Assets\Music\SoundVolumeControllerComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BreakableWall">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIACAAAAAgAAAAAAAAAAAEAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\BreakableWall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonTrigger">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAEAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\ButtonTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyProjectile">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAggAAAAEAAAAAAFAAAQEAAQAAAABAAEA=</HashCode>
+      <FileName>Assets\scripts\EnemyProjectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gifanimation">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\gifanimation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthBar">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAgEAgAAAAA=</HashCode>
+      <FileName>Assets\scripts\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="heromove">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBQAEAEowyMgIEMlliAgEQERAJANJ9AgSQBAogARUAo=</HashCode>
+      <FileName>Assets\scripts\heromove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemArmor">
+    <Position X="7.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAAE=</HashCode>
+      <FileName>Assets\scripts\ItemArmor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemSword">
+    <Position X="11" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\ItemSword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAgAIAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SabatonsItem">
+    <Position X="12.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\SabatonsItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TEstEnemy">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAKBSIAsCAgBQAAAAAAAAIkAQABAQAAkiCAAEA=</HashCode>
+      <FileName>Assets\scripts\TEstEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriggerActivation">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\TriggerActivation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpikeTrap">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABSAAACAAAACgAAAIAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Spike\SpikeTrap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerData">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAMAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Player\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projectile">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAACBAogAAAAAAAAAAAEIAAAAAAQCAAAAAAEA=</HashCode>
+      <FileName>Assets\scripts\Player\Projectile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RangeAttackPLayer">
+    <Position X="20" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAABAAAAAAIAAAAAAAABAAAQAAAggCAEA=</HashCode>
+      <FileName>Assets\scripts\Player\RangeAttackPLayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaveSystem">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\Player\SaveSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Inventory">
+    <Position X="9.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAQAAAAAAAACAAAAAACAAAACAAAAAA=</HashCode>
+      <FileName>Assets\scripts\inventory\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pickup">
+    <Position X="9.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAACEAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\inventory\Pickup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Slot">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAACICAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\inventory\Slot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spawn">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQQAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\scripts\inventory\Spawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActivateWallTrigger">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\ActivateWallTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DestroyOnTargetDestroyed">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\DestroyOnTargetDestroyed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeleportationObject">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAEAAAABAAUAAAACwAAA=</HashCode>
+      <FileName>Assets\ElevatingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FirePointHolder">
+    <Position X="20" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\FirePointHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthZone">
+    <Position X="21.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAQAAACAACAAAAAAAQAAAAAAAEAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\HealthZone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OffAudioTrigger">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OffAudioTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OneTimeTrigger">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OneTimeTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="swampWater">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAAAAAAAAAAAAAAEAAEAABAAAAAAAAAAw=</HashCode>
+      <FileName>Assets\swampWater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
